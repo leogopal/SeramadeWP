@@ -6,7 +6,22 @@ function seramadewp_enqueue_styles() {
 	wp_enqueue_style( 'seramadewp-style', get_stylesheet_directory_uri() . '/style.css', false, '1.1.11' );
 }
 // add_action( 'wp_enqueue_scripts', 'seramadewp_enqueue_styles', 20 );
+add_action( 'wp_enqueue_scripts', 'seramadewp_enqueue_styles', 20 );
+/**
+ * Setup Child Theme Scripts
+ */
+function seramadewp_enqueue_scripts() {
+	wp_enqueue_script( 'seramadewp-script', get_stylesheet_directory_uri() . '/js/custom.js', array( 'jquery' ), '1.0.0', true );
+}
+add_action( 'wp_enqueue_scripts', 'seramadewp_enqueue_scripts', 20 );
 
+/**
+ * Setup Child Theme Text Domain
+ */
+function seramadewp_setup() {
+	load_child_theme_textdomain( 'seramadewp', get_stylesheet_directory() . '/languages' );
+}
+add_action( 'after_setup_theme', 'seramadewp_setup' );
 
 /**
  * Setup Child Theme Palettes
@@ -32,3 +47,14 @@ function seramadewp_change_option_defaults( $defaults ) {
 	return wp_parse_args( $new_defaults, $defaults );
 }
 add_filter( 'kadence_theme_options_defaults', 'seramadewp_change_option_defaults', 20 );
+
+/**
+ * Setup site Data Post Types, Taxonomies, and Meta Fields
+ * by importing the init.php file in inc directory
+ * 
+ * @package SeramadeWP
+ * @since 1.0.0
+ * @version 1.0.0
+ * 
+ */
+require_once get_stylesheet_directory() . '/inc/init.php';
