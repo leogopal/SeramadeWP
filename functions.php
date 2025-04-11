@@ -7,13 +7,7 @@ function seramadewp_enqueue_styles() {
 }
 // add_action( 'wp_enqueue_scripts', 'seramadewp_enqueue_styles', 20 );
 add_action( 'wp_enqueue_scripts', 'seramadewp_enqueue_styles', 20 );
-/**
- * Setup Child Theme Scripts
- */
-function seramadewp_enqueue_scripts() {
-	wp_enqueue_script( 'seramadewp-script', get_stylesheet_directory_uri() . '/js/custom.js', array( 'jquery' ), '1.0.0', true );
-}
-add_action( 'wp_enqueue_scripts', 'seramadewp_enqueue_scripts', 20 );
+
 
 /**
  * Setup Child Theme Text Domain
