@@ -57,4 +57,4 @@ add_filter( 'kadence_theme_options_defaults', 'seramadewp_change_option_defaults
  * @version 1.0.0
  * 
  */
-require_once get_stylesheet_directory() . '/inc/init.php';
+// require_once get_stylesheet_directory() . '/inc/init.php';
