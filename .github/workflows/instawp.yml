@@ -1,0 +1,21 @@
+- name: InstaWP WordPress Github Action
+  # You may pin to the exact commit or the version.
+  # uses: InstaWP/wordpress-testing-automation@c632ec3b430feb043f2d569d0ff06977d576e4d8
+  uses: InstaWP/wordpress-testing-automation@v4
+  with:
+    # GitHub token
+    GITHUB_TOKEN:
+    # Action to perform, supported create-site-template & destroy-site
+    INSTAWP_ACTION: # default is create-site-template
+    # InstaWP API Token (site:create)
+    INSTAWP_TOKEN:
+    # InstaWP Template Slug (action: create-site-template)
+    INSTAWP_TEMPLATE_SLUG: # optional
+    # InstaWP Repo ID (action: create-site-template)
+    REPO_ID: # optional
+    # For testing purpose only
+    INSTAWP_DOMAIN: # optional
+    # Override the Artifact URL (.zip) file
+    ARTIFACT_URL: # optional
+    # Number of hours after which the site will expire
+    EXPIRY_HOURS: # optional
